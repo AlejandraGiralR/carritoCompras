@@ -26,11 +26,11 @@ btnProducts.forEach((btn, i) => {
 function agregarProducto(producto) {
     let fila = document.createElement("tr");
     fila.innerHTML = `
-        td> ${cont}</td>
-        td> <img src "${producto.imagen}" width="70px"></td>
-        td> ${producto.nombre}</td>
-        td> $${producto.precio}</td>
-        td> <span onclick="eliminarProducto(${cont})" class="btn btn-danger">X</span></td>
+        <td> ${cont}</td>
+        <td> <img src "${producto.imagen}" width="70px"></td>
+        <td> ${producto.nombre}</td>
+        <td> $${producto.precio}</td>
+        <td> <span onclick="eliminarProducto(${cont})" class="btn btn-danger">X</span></td>
       
     `;
     listadoCarrito.appendChild(fila);
@@ -102,6 +102,10 @@ let todosProductos = [];
         agregarProducto(producto);
     });
   }
+
+  contadorCarrito.parentElement.addEventListener("click", () => {
+listadoCarrito.parentElement.classList.toggle("ocultar");
+  });
 
 /* 
   // sidebarCarrito.js
